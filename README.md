@@ -1,6 +1,4 @@
-=============================================
-= Dragonbound -- General information =
-=============================================
+###$ Dragonbound - General information 
 Copyright (C) Dragonbound - Emulator
   
 #### If you want to help me :)
