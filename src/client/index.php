@@ -45,11 +45,11 @@ include("config.php");
                         </script>
                         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js">
                         </script>
-                        <script src="/static/js/avatars.js?<? echo $fb_api;?>">
+                        <script src="/static/js/avatars.js?<? echo $ver;?>">
                         </script>
-                        <script src="/static/js/xicogjs.js?">
+                        <script src="/static/js/xicogjs.js?<? echo $ver;?>">
                         </script>
-                        <link rel="stylesheet" href="/static/css/DragonBound.min.css?<? echo $fb_api;?>"/>
+                        <link rel="stylesheet" href="/static/css/DragonBound.min.css?<? echo $ver;?>"/>
                         <style id="DragonTheme">
                         </style>
                     <body>
