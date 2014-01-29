@@ -1,0 +1,49 @@
+CACHE MANIFEST
+
+# code
+js/avatars.js?6
+js/xicogjs.js
+css/DragonBound.min.css?6
+
+# lib
+//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js
+//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js
+//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/themes/base/jquery-ui.css
+//connect.facebook.net/en_US/all.js
+
+# lobby
+images/lobby_stuff6.png
+images/themes/gl/bg_full.jpg
+images/themes/gl/maps.png?2
+images/bg-gb-scrollbar-track-y.png
+images/bg-gb-scrollbar-trackend-y.png
+images/bg-gb-scrollbar-thumb-y.png
+
+# room
+images/room_stuff2.png
+images/ready2.gif
+images/start2.gif
+images/me.gif
+images/items2.png
+images/bg_blue.jpg
+
+# game
+images/game_stuff4.png
+images/turn_timer.png
+images/repeat_x.png
+images/thor.png
+images/lightnings.png
+images/1/gold.png
+images/1/turn.png
+images/1/turnwa.png
+images/1/bpush1.png
+images/1/bselect1.png
+images/scores_stuff2.png
+
+# shop
+images/shop_stuff3.png
+
+NETWORK:
+*
+http://*
+https://*
