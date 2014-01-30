@@ -30,7 +30,7 @@ namespace GameServerDB
             MapsL.LoadMaps.Load();
             _SQL.Init("localhost", "root", "123456", "db_clone", 3306);
             
-            var wssv = new WebSocketServiceHost<Serverb>("ws://192.168.1.5:9003");
+            var wssv = new WebSocketServiceHost<Serverb>("ws://192.168.1.5:9002");
             
             wssv.OnError += (sender, e) =>
                 {
