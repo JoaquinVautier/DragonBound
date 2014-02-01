@@ -211,6 +211,12 @@ namespace GameServerDB
                                         }
                                         break;
                                     }
+                                case ClientOpcode.guild_create:
+                                    {
+                                        string guild_name = dcode[1].ToObject<string>();
+                                        LogConsole.Show(LogType.DEBUG, "GuildC: {0}", guild_name);
+                                        break;
+                                    }
                                 case ClientOpcode.refresh_friends:
                                     {
                                         User.ListFriends();
