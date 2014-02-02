@@ -30,7 +30,7 @@ namespace GameServerDB
         }
         protected override void OnOpen()
         {
-            string _hi_p = "[9,39,\"Beginners\",0,0]";
+            string _hi_p = "[9,41,\"Beginners\",0,0]";
             Send(_hi_p);
             Console.WriteLine("id: {0}", this.ID);
             User.session_id = this.ID;
@@ -66,7 +66,7 @@ namespace GameServerDB
                             {
                                 case ClientOpcode.login:
                                     {
-                                        //[0,39,1,"673177b72cdfc80ae26c",2309502]
+                                        //[0,41,1,"123456789",1]
                                         User.version = dcode[1].ToObject<int>();
                                         User.user_id = dcode[2].ToObject<int>();
                                         User.user_key = dcode[3].ToObject<string>();
@@ -276,12 +276,12 @@ namespace GameServerDB
                                         if (_chan != null)
                                         {
                                             int _uid = dcode[1].ToObject<int>();
-                                            int _x = dcode[1].ToObject<int>();
-                                            int _y = dcode[1].ToObject<int>();
-                                            int _body = dcode[1].ToObject<int>();
-                                            int _look = dcode[1].ToObject<int>();
-                                            int _angl = dcode[1].ToObject<int>();
-                                            int _time = dcode[1].ToObject<int>();
+                                            int _x = dcode[2].ToObject<int>();
+                                            int _y = dcode[3].ToObject<int>();
+                                            int _body = dcode[4].ToObject<int>();
+                                            int _look = dcode[5].ToObject<int>();
+                                            int _angl = dcode[6].ToObject<int>();
+                                            int _time = dcode[7].ToObject<int>();
                                         }
                                         break;
                                     }

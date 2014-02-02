@@ -10,6 +10,7 @@ using WebSocketSharp;
 using WebSocketSharp.Server;
 using GameServerDB.UserManager;
 using GameServerDB.ChanelManager;
+using GameServerDB.Utily;
 
 namespace GameServerDB
 {
@@ -22,15 +23,61 @@ namespace GameServerDB
         public static List<Channel> Chanels = new List<Channel>();
         public static MySqlBase _SQL = new MySqlBase();
         public static string PATH = "";
+
+        public static int LSPort = 9002;
+        public static string LSIP = "localhost";
+        public static bool debug = false;
+
+        public static string MIp = "localhost";
+        public static string MUser = "root";
+        public static string MPass = "";
+        public static int MPort = 3306;
+        public static string MDb = "db_clone";
         #endregion
         static void Main(string[] args)
         {
             LogConsole._Load();
             PATH = Environment.CurrentDirectory.ToString();
+            Ini ini = null;
+
+            #region Load Settings
+            try
+            {
+                if (File.Exists(Environment.CurrentDirectory + @"\Settings\Settings.ini"))
+                {
+                    ini = new Ini(Environment.CurrentDirectory + @"\Settings\Settings.ini");
+                    LSPort = Convert.ToInt32(ini.GetValue("Server", "port", 9002));
+                    LSIP  = ini.GetValue("Server", "ip", "localhost").ToString();
+
+                    MIp   = ini.GetValue("MySql", "ip", "localhost").ToString();
+                    MUser = ini.GetValue("MySql", "user", "root").ToString();
+                    MPass = ini.GetValue("MySql", "pass", "").ToString();
+                    MDb   = ini.GetValue("MySql", "db", "db_clone").ToString();
+                    MPort = Convert.ToInt32(ini.GetValue("MySql", "port", 3306));
+
+                    debug = Convert.ToBoolean(ini.GetValue("Console", "debug", false));
+
+                    ini = null;
+                    LogConsole.Show(LogType.INFO, "Has loaded your ip settings successfully");
+                }
+                else
+                {
+                    LogConsole.Show(LogType.ALERT, "Settings.ini could not be found, using default setting");
+                }
+            }
+            catch (Exception excc)
+            {
+                LogConsole.Show(LogType.ERROR, " {0}", excc.ToString());
+                return;
+            }
+            #endregion
+
+
+            _SQL.Init(MIp, MUser, MPass, MDb, MPort);
+
             MapsL.LoadMaps.Load();
-            _SQL.Init("localhost", "root", "123456", "db_clone", 3306);
-            
-            var wssv = new WebSocketServiceHost<Serverb>("ws://192.168.1.5:9002");
+
+            var wssv = new WebSocketServiceHost<Serverb>("ws://" + LSIP + ":" + LSPort);
             
             wssv.OnError += (sender, e) =>
                 {

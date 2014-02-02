@@ -63,10 +63,14 @@
     <Compile Include="UserManager\UserClass.cs" />
     <Compile Include="Utily\BitStream.cs" />
     <Compile Include="Utily\EncodingExtensions.cs" />
+    <Compile Include="Utily\INI.cs" />
     <Compile Include="Utily\LogConsole.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Settings\Settings.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Newtonsoft.Json\Newtonsoft.Json.csproj">
