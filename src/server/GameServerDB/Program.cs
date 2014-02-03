@@ -24,7 +24,8 @@ namespace GameServerDB
         public static MySqlBase _SQL = new MySqlBase();
         public static string PATH = "";
 
-        public static int LSPort = 9002;
+        public static string WSurl = "ws://";
+        public static string LSPort = "9002";
         public static string LSIP = "localhost";
         public static bool debug = false;
 
@@ -38,16 +39,16 @@ namespace GameServerDB
         {
             LogConsole._Load();
             PATH = Environment.CurrentDirectory.ToString();
-            Ini ini = null;
+            Inix ini = null;
 
             #region Load Settings
             try
             {
-                if (File.Exists(Environment.CurrentDirectory + @"\Settings\Settings.ini"))
+                if (File.Exists(PATH + @"\Settings\Settings.ini"))
                 {
-                    ini = new Ini(Environment.CurrentDirectory + @"\Settings\Settings.ini");
-                    LSPort = Convert.ToInt32(ini.GetValue("Server", "port", 9002));
-                    LSIP  = ini.GetValue("Server", "ip", "localhost").ToString();
+                    ini = new Inix(PATH + @"\Settings\Settings.ini");
+                    LSPort = ini.GetValue("Server", "port", 9002).ToString();
+                    LSIP   = ini.GetValue("Server", "ip", "localhost").ToString();
 
                     MIp   = ini.GetValue("MySql", "ip", "localhost").ToString();
                     MUser = ini.GetValue("MySql", "user", "root").ToString();
@@ -77,7 +78,9 @@ namespace GameServerDB
 
             MapsL.LoadMaps.Load();
 
-            var wssv = new WebSocketServiceHost<Serverb>("ws://" + LSIP + ":" + LSPort);
+            WSurl = WSurl + LSIP + ":" + LSPort;
+
+            var wssv = new WebSocketServiceHost<Serverb>(WSurl);
             
             wssv.OnError += (sender, e) =>
                 {

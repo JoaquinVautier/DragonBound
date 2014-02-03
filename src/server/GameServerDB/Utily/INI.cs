@@ -1170,18 +1170,18 @@ namespace GameServerDB.Utily
         }
 
 
-        public class Ini : Profile
+        public class Inix : Profile
         {
-            public Ini()
+            public Inix()
             {
             }
 
-            public Ini(string fileName)
+            public Inix(string fileName)
                 : base(fileName)
             {
             }
 
-            public Ini(Ini ini)
+            public Inix(Inix ini)
                 : base(ini)
             {
             }
@@ -1206,7 +1206,7 @@ namespace GameServerDB.Utily
             /// <seealso cref="Profile.CloneReadOnly" />
             public override object Clone()
             {
-                return new Ini(this);
+                return new Inix(this);
             }
 
             // The Win32 API methods
