@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : local2
-Source Server Version : 50508
+Source Server         : local
+Source Server Version : 50534
 Source Host           : localhost:3306
 Source Database       : db_clone
 
 Target Server Type    : MYSQL
-Target Server Version : 50508
+Target Server Version : 50534
 File Encoding         : 65001
 
-Date: 2014-01-30 12:18:27
+Date: 2014-02-03 19:25:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -76,7 +76,7 @@ CREATE TABLE `items` (
   `parte` char(2) DEFAULT NULL,
   `nombre` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=978 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1066 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of items
@@ -962,15 +962,15 @@ INSERT INTO `items` VALUES ('907', '3437', 'm', 'b', 'Sonic');
 INSERT INTO `items` VALUES ('908', '3438', 'f', 'h', 'Amy Rose');
 INSERT INTO `items` VALUES ('909', '3439', 'f', 'b', 'Amy Rose');
 INSERT INTO `items` VALUES ('910', '3440', 'a', '1', 'Sky');
-INSERT INTO `items` VALUES ('911', '3441', 'm', 'h', '(SET) Chapulinâ€');
-INSERT INTO `items` VALUES ('912', '3442', 'm', 'b', '(SET) Chapulinâ€');
-INSERT INTO `items` VALUES ('913', '3443', 'a', 'g', '(SET) Chapulinâ€');
-INSERT INTO `items` VALUES ('914', '3444', 'a', 'f', '(SET) Chapulinâ€');
-INSERT INTO `items` VALUES ('915', '3445', 'a', '1', '(SET) Chapulinâ€');
+INSERT INTO `items` VALUES ('911', '3441', 'm', 'h', '(SET) Chapulin?');
+INSERT INTO `items` VALUES ('912', '3442', 'm', 'b', '(SET) Chapulin?');
+INSERT INTO `items` VALUES ('913', '3443', 'a', 'g', '(SET) Chapulin?');
+INSERT INTO `items` VALUES ('914', '3444', 'a', 'f', '(SET) Chapulin?');
+INSERT INTO `items` VALUES ('915', '3445', 'a', '1', '(SET) Chapulin?');
 INSERT INTO `items` VALUES ('916', '3446', 'f', 'h', 'Viuda Negra');
 INSERT INTO `items` VALUES ('917', '3447', 'f', 'b', 'Viuda Negra');
 INSERT INTO `items` VALUES ('918', '3448', 'a', 'f', 'Viuda Negra');
-INSERT INTO `items` VALUES ('919', '3449', 'a', '1', 'LimÃ³nâ™¥');
+INSERT INTO `items` VALUES ('919', '3449', 'a', '1', 'Limón?');
 INSERT INTO `items` VALUES ('921', '3451', 'a', '2', '(RARE) Funny Spider ');
 INSERT INTO `items` VALUES ('922', '3452', 'a', '1', '(RARE) Neon Pumpkin');
 INSERT INTO `items` VALUES ('923', '3453', 'a', 'h', 'Delerium');
@@ -997,7 +997,7 @@ INSERT INTO `items` VALUES ('946', '2476', 'a', 'f', 'Monster');
 INSERT INTO `items` VALUES ('947', '3477', 'a', 'g', 'Ball of Fire');
 INSERT INTO `items` VALUES ('948', '3478', 'm', 'h', '(SET) Luffy ll');
 INSERT INTO `items` VALUES ('949', '3479', 'm', 'b', '(SET) Luffy ll');
-INSERT INTO `items` VALUES ('950', '3480', 'a', 'g', 'I â™¥ YOU');
+INSERT INTO `items` VALUES ('950', '3480', 'a', 'g', 'I ? YOU');
 INSERT INTO `items` VALUES ('951', '3481', 'a', 'g', 'Eyes of Love');
 INSERT INTO `items` VALUES ('952', '3482', 'a', 'g', 'Bat ');
 INSERT INTO `items` VALUES ('953', '3483', 'f', 'h', 'Zamantha');
@@ -1015,6 +1015,26 @@ INSERT INTO `items` VALUES ('974', '2504', 'a', '1', '(RARE) Tournament Wi');
 INSERT INTO `items` VALUES ('975', '2505', 'a', '1', '(RARE) Tournament Go');
 INSERT INTO `items` VALUES ('976', '2506', 'a', '1', '(RARE) Tournament Si');
 INSERT INTO `items` VALUES ('977', '2507', 'a', '1', '(RARE) Tournament Br');
+INSERT INTO `items` VALUES ('1014', '3544', 'm', 'h', 'Santa Claus DB 2013');
+INSERT INTO `items` VALUES ('1015', '3545', 'm', 'b', 'Santa Claus DB 2013');
+INSERT INTO `items` VALUES ('1016', '3546', 'f', 'h', 'Mrs Claus DB 2013');
+INSERT INTO `items` VALUES ('1017', '3547', 'f', 'b', 'Mrs Claus DB 2013');
+INSERT INTO `items` VALUES ('1018', '3548', 'a', 'g', 'Rudolf DB 2013');
+INSERT INTO `items` VALUES ('1019', '3549', 'a', 'f', '(RARE) Xmas 2013');
+INSERT INTO `items` VALUES ('1020', '3550', 'a', '2', 'Renzo');
+INSERT INTO `items` VALUES ('1024', '3554', 'a', '1', 'Tournament B');
+INSERT INTO `items` VALUES ('1025', '3555', 'a', '1', 'Tournament B Gold');
+INSERT INTO `items` VALUES ('1026', '3556', 'a', '1', 'Tournament B Silver');
+INSERT INTO `items` VALUES ('1027', '3557', 'a', '1', 'Tournament B Bronze');
+INSERT INTO `items` VALUES ('1028', '3558', 'a', 'f', 'Valentine&apos;s Cup');
+INSERT INTO `items` VALUES ('1029', '3559', 'a', 'f', 'Valentine&apos;s Cho');
+INSERT INTO `items` VALUES ('1030', '3560', 'a', 'f', 'Valentine&apos;s Pho');
+INSERT INTO `items` VALUES ('1060', '9004', 'a', 'x', 'Rose (get relationsh');
+INSERT INTO `items` VALUES ('1061', '9005', 'a', 'x', 'Engagement Ring');
+INSERT INTO `items` VALUES ('1062', '9006', 'a', 'x', 'Marriage Ring');
+INSERT INTO `items` VALUES ('1063', '9007', 'a', 'x', 'Tissue (break friend');
+INSERT INTO `items` VALUES ('1064', '9008', 'a', 'x', 'Hammer (break engage');
+INSERT INTO `items` VALUES ('1065', '9009', 'a', 'x', 'Lawyer (break marria');
 
 -- ----------------------------
 -- Table structure for users
