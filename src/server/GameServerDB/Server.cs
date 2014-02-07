@@ -32,7 +32,6 @@ namespace GameServerDB
         {
             string _hi_p = "[9,41,\"Beginners\",0,0]";
             Send(_hi_p);
-            Console.WriteLine("id: {0}", this.ID);
             User.session_id = this.ID;
             Program.Users.Add(User);
             User.sep = this;

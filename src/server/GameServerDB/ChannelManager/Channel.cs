@@ -333,6 +333,12 @@ namespace GameServerDB.ChanelManager
                     Random rand = new Random();
                     this._channel_map = 0;//rand.Next(0, 11);
                 }
+
+                if (UserInSala.Count() <= 1)
+                {
+                    ChatInfo("Error ", "", 6);
+                    return;
+                }
                 _map_data = Program.RMaps.Single(a => a.id == this._channel_map);
                 cshot = new CShot(_map_data.ground);
                 cshot.Shot += cshot_Shot;
@@ -829,7 +835,6 @@ namespace GameServerDB.ChanelManager
                 writer.WriteEndArray();
             }
             SendAll(sb.ToString());
-            ChatInfo("Room master was transferred to " + _usr.Name, "", 6);
         }
         //-----------------------------------------------------------------------------------------------------
         public void ChatInfo(string msg, string unk, int type)
